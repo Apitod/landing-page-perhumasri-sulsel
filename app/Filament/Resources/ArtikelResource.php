@@ -61,8 +61,15 @@ class ArtikelResource extends Resource
                 ->schema([
                     Forms\Components\FileUpload::make('gambar')
                         ->image()
-                        ->imageEditor()
                         ->directory('artikel')
+                        ->maxSize(5120)
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                        ->helperText(
+                            '📐 Panduan ukuran gambar agar tidak terpotong: ' .
+                            'Artikel/Berita/Liputan → rasio 16:9, rekomendasi 1200×675 px. ' .
+                            'Poster/Kegiatan → rasio 3:4 (portrait), rekomendasi 900×1200 px. ' .
+                            'Format: JPG, PNG, WebP. Maks 5MB.'
+                        )
                         ->columnSpanFull(),
 
                     Forms\Components\RichEditor::make('konten')

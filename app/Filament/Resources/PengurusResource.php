@@ -73,7 +73,13 @@ class PengurusResource extends Resource
                         ->imageEditor()
                         ->directory('pengurus')
                         ->nullable()
-                        ->helperText('Opsional. Format: JPG, PNG. Maks 2MB.')
+                        ->maxSize(2048)
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                        ->helperText(
+                            '📐 Gunakan foto dengan rasio 1:1 (persegi), rekomendasi 400×400 px atau 600×600 px. ' .
+                            'Foto wajah sebaiknya di-crop ke bentuk kotak sebelum upload agar tidak terpotong. ' .
+                            'Format: JPG, PNG, WebP. Maks 2MB.'
+                        )
                         ->columnSpanFull(),
                 ]),
         ]);

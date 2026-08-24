@@ -32,11 +32,13 @@
         </div>
 
         @if($artikel->gambar)
-        <img src="{{ Storage::url($artikel->gambar) }}" alt="{{ $artikel->judul }}" class="w-full rounded-2xl mb-8 object-cover max-h-[420px]">
+        <div class="w-full max-h-[600px] bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center mb-8">
+            <img src="{{ Storage::url($artikel->gambar) }}" alt="{{ $artikel->judul }}" class="max-w-full max-h-[600px] object-contain">
+        </div>
         @endif
 
         {{-- Article content --}}
-        <div class="prose prose-gray max-w-none prose-headings:font-bold prose-a:text-brand-orange mb-12">
+        <div class="prose-content mb-12">
             {!! $artikel->konten !!}
         </div>
 

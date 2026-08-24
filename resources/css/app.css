@@ -261,4 +261,213 @@
         font-size: 0.8125rem;
         padding: 0.375rem 0;
     }
+
+    /* ---- Prose Content (RichEditor output) ---- */
+    /*
+        Digunakan untuk menampilkan konten HTML dari Filament RichEditor.
+        Memastikan semua elemen (paragraf, heading, list, blockquote, dll)
+        tampil dengan spacing dan format yang benar sesuai yang dibuat admin.
+    */
+    .prose-content {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--color-text-primary);
+        max-width: none;
+    }
+
+    /* Paragraf */
+    .prose-content p {
+        margin-top: 0;
+        margin-bottom: 1.25em;
+    }
+
+    .prose-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Heading */
+    .prose-content h1,
+    .prose-content h2,
+    .prose-content h3,
+    .prose-content h4,
+    .prose-content h5,
+    .prose-content h6 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--color-text-primary);
+        margin-top: 1.75em;
+        margin-bottom: 0.6em;
+    }
+
+    .prose-content h1 { font-size: 1.875rem; }
+    .prose-content h2 { font-size: 1.5rem; }
+    .prose-content h3 { font-size: 1.25rem; }
+    .prose-content h4 { font-size: 1.125rem; }
+    .prose-content h5,
+    .prose-content h6 { font-size: 1rem; }
+
+    /* Heading pertama tidak perlu margin top */
+    .prose-content > :first-child {
+        margin-top: 0;
+    }
+
+    /* Tebal dan Miring */
+    .prose-content strong,
+    .prose-content b {
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
+
+    .prose-content em,
+    .prose-content i {
+        font-style: italic;
+    }
+
+    .prose-content s,
+    .prose-content del {
+        text-decoration: line-through;
+        color: var(--color-text-muted);
+    }
+
+    /* Link */
+    .prose-content a {
+        color: var(--color-brand-orange);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s;
+    }
+
+    .prose-content a:hover {
+        color: var(--color-brand-orange-dark);
+    }
+
+    /* Unordered list */
+    .prose-content ul {
+        list-style-type: disc;
+        padding-left: 1.625em;
+        margin-top: 0.75em;
+        margin-bottom: 1.25em;
+    }
+
+    /* Ordered list */
+    .prose-content ol {
+        list-style-type: decimal;
+        padding-left: 1.625em;
+        margin-top: 0.75em;
+        margin-bottom: 1.25em;
+    }
+
+    .prose-content li {
+        margin-bottom: 0.4em;
+        line-height: 1.7;
+    }
+
+    .prose-content li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Nested list */
+    .prose-content ul ul,
+    .prose-content ol ol,
+    .prose-content ul ol,
+    .prose-content ol ul {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+    }
+
+    /* Blockquote */
+    .prose-content blockquote {
+        border-left: 4px solid var(--color-brand-orange);
+        padding: 0.75em 1.25em;
+        margin: 1.5em 0;
+        background-color: rgb(246 165 92 / 0.06);
+        border-radius: 0 0.5rem 0.5rem 0;
+        font-style: italic;
+        color: var(--color-text-secondary);
+    }
+
+    .prose-content blockquote p {
+        margin-bottom: 0;
+    }
+
+    /* Code inline */
+    .prose-content code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        background-color: rgb(0 0 0 / 0.06);
+        padding: 0.15em 0.4em;
+        border-radius: 0.25rem;
+        color: var(--color-text-primary);
+    }
+
+    /* Code block */
+    .prose-content pre {
+        background-color: #1e293b;
+        color: #e2e8f0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 1.25em 1.5em;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        margin: 1.5em 0;
+        line-height: 1.6;
+    }
+
+    .prose-content pre code {
+        background: none;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        border-radius: 0;
+    }
+
+    /* Horizontal rule */
+    .prose-content hr {
+        border: none;
+        border-top: 1px solid #e5e7eb;
+        margin: 2em 0;
+    }
+
+    /* Gambar di dalam konten */
+    .prose-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.75rem;
+        margin: 1.5em 0;
+        display: block;
+    }
+
+    /* Table */
+    .prose-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        font-size: 0.9375rem;
+    }
+
+    .prose-content th {
+        background-color: var(--color-brand-blue);
+        color: #fff;
+        font-weight: 600;
+        text-align: left;
+        padding: 0.625em 0.875em;
+    }
+
+    .prose-content td {
+        padding: 0.625em 0.875em;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+    }
+
+    .prose-content tr:nth-child(even) td {
+        background-color: #f9fafb;
+    }
+
+    /* Whitespace dan line break */
+    .prose-content br {
+        display: block;
+        content: "";
+        margin-top: 0.5em;
+    }
 }
